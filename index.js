@@ -18,13 +18,15 @@ const questionsArr = [
 ]
 
 let numCorrect = 0
-
+  
 let runQuiz = () => {
     for (i = 0; i < questionsArr.length; i++) {
-        confirm(questionsArr[i].question)
-        if (questionsArr[i].question) {
+        if (confirm(questionsArr[i].question) === questionsArr[i].answer) {
             numCorrect++
-            console.log(numCorrect)
         }
     }
+    let percentCorrect = numCorrect / 5
+    let unroundScore = percentCorrect * 100
+    let score = Math.round(unroundScore)
+    alert('Your quiz score is ' + score + '%')
 }
