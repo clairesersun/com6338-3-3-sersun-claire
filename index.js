@@ -1,4 +1,4 @@
-var questionsArr = [
+const questionsArr = [
     {
         question: 'JavaScript is the best language',
         answer: true
@@ -17,6 +17,14 @@ var questionsArr = [
     }
 ]
 
-runQuiz = () => {
-    
+let numCorrect = 0
+
+let runQuiz = () => {
+    for (i = 0; i < questionsArr.length; i++) {
+        confirm(questionsArr[i].question)
+        if (questionsArr[i].question) {
+            numCorrect++
+            console.log(numCorrect)
+        }
+    }
 }
